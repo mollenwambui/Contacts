@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.example.contactsrecyclerviews.databinding.ActivityViewContactsBinding
 import com.example.contactsrecyclerviews.databinding.ContactsListItemBinding
+import com.squareup.picasso.Picasso
 
 class ViewContacts : AppCompatActivity() {
     lateinit var binding: ActivityViewContactsBinding
@@ -23,10 +24,15 @@ class ViewContacts : AppCompatActivity() {
         Toast.makeText(this,name,Toast.LENGTH_LONG).show()
         Toast.makeText(this,address,Toast.LENGTH_LONG).show()
         Toast.makeText(this,email,Toast.LENGTH_LONG).show()
-        Toast.makeText(this,image,Toast.LENGTH_LONG).show()
+//        Toast.makeText(this,image,Toast.LENGTH_LONG).show()
         Toast.makeText(this,phoneNumber,Toast.LENGTH_LONG).show()
 
-         binding.tvname
+        binding.tvname.text=name
+        binding.tvPhone.text=phoneNumber
+        binding.tvMail.text=email
+        binding.tvLocation.text=address
+//        Picasso.get().load(intent.getStringExtra("Image")).into(image)
+        Picasso.get().load(intent.getStringExtra("Image")).into(binding.imgPerson)
 
     }
 }
