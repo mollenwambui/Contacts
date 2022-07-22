@@ -1,10 +1,12 @@
 package com.example.contactsrecyclerviews
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.view.menu.MenuView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.contactsrecyclerviews.databinding.ContactsListItemBinding
@@ -24,6 +26,7 @@ class ContactsrvAdapter (var contactslist:List<Contacts>):
         holder.binding.tvPhoneNumber.text=currentContact.phoneNumber
         holder.binding.tvEmail.text=currentContact.email
         holder.binding.tvAddress.text=currentContact.address
+
         Picasso.get()
             .load(currentContact.image)
             .resize(300,300)
@@ -31,7 +34,21 @@ class ContactsrvAdapter (var contactslist:List<Contacts>):
             .noFade()
             .placeholder(R.drawable.ic_baseline_person_24)
             .into(holder.binding.imgContact)
-
+        val context=holder.itemView.context
+        holder.binding.imgContact.setOnClickListener {
+        Toast
+            .makeText(context,"You have clicked the image",Toast.LENGTH_LONG)
+            .show()
+        }
+        holder.binding.cvContacts.setOnClickListener {
+            val intent=Intent(context,ViewContacts::class.java)
+            intent.putExtra("NAME",currentContact.name)
+            intent.putExtra("ADDRESS",currentContact.address)
+            intent.putExtra("Email",currentContact.email)
+            intent.putExtra("PhoneNumber",currentContact.phoneNumber)
+            intent.putExtra("Image",currentContact.image)
+            context.startActivity(intent)
+        }
 
     }
 
