@@ -31,7 +31,6 @@ class ContactsrvAdapter (var contactslist:List<Contacts>):
             .load(currentContact.image)
             .resize(300,300)
             .centerCrop()
-            .noFade()
             .placeholder(R.drawable.ic_baseline_person_24)
             .into(holder.binding.imgContact)
         val context=holder.itemView.context
