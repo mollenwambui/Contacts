@@ -2,13 +2,10 @@ package com.example.contactsrecyclerviews
 
 import android.content.Intent
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.view.menu.MenuView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.contactsrecyclerviews.Ui.Contacts
 import com.example.contactsrecyclerviews.databinding.ContactsListItemBinding
 import com.squareup.picasso.Picasso
 

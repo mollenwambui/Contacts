@@ -7,7 +7,7 @@ import com.example.contactsrecyclerviews.databinding.ActivityViewContactsBinding
 import com.example.contactsrecyclerviews.databinding.ContactsListItemBinding
 import com.squareup.picasso.Picasso
 
-class ViewContacts : AppCompatActivity() {
+class                                                                                                                       ViewContacts : AppCompatActivity() {
     lateinit var binding: ActivityViewContactsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
